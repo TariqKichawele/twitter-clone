@@ -15,7 +15,7 @@ const Posts = ({ feedType, username, userId }) => {
             case "posts":
                 return `/api/posts/user/${username}`;
             case "likes":
-                return `/api/posts/likes/${userId};`;
+                return `/api/posts/likes/${userId}`;
             default:
                 return "/api/posts/all";
         }
@@ -45,6 +45,8 @@ const Posts = ({ feedType, username, userId }) => {
     useEffect(() => {
         refetch();
     }, [feedType, refetch, username]);
+
+    console.log(posts);
 
 
   return (
